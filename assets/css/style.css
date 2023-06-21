@@ -12,11 +12,14 @@ body{
     "principal"
     "footer";
 }
-.vertical{
+.navdesktop{
     display: none;
 }
-.navbar{
+.navphone{
     grid-area: navbar;
+}
+.navbar-brand{
+    width: 200px;
 }
 .navbar-brand:hover {
 animation: ascend 3s;
@@ -36,11 +39,24 @@ animation: ascend 3s;
     grid-area: principal;
     gap: 1em;
 }
+.plantimg{
+    filter: grayscale(100%);
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+.plantimg:hover{
+    filter: none;
+    transform: scale(1.5);
+  }
 .card-body{
 text-align: center;
 }
-.footer{
+footer{
     grid-area: footer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 .socialicon{
     margin: 1em;
@@ -48,6 +64,9 @@ text-align: center;
 }
 .footflex{
     text-align: center;
+    color: white;
+}
+.contacto p{
     color: white;
 }
 /* MOBILE FIRTS */
@@ -59,61 +78,31 @@ text-align: center;
         grid-template-areas:
         "navbar navbar navbar"
         "filtro planta planta"
-        "filtro bar bar"
+        "filtro planta planta"
         "footer footer footer";
         grid-template-columns: 10em;
         grid-template-rows: 6em;
     }
-    .fondonav{
+    .navphone{
         grid-area: navbar;
-    }
-    .navbar{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin: 0;
-
-    }
-    .burgernav{
-        display: none;
-    }
-    .menu{
-        margin: 2em;
-        display: block;
-    }
-    .menu ul{
-        list-style: none;
-        display: flex;
-    }
-    .menu li{
-        margin: 1em;
     }
     .fondofiltro{
         grid-area: filtro;
     }
     .principal{
-        margin-top: 1em;
-        margin-left: 1em;
         grid-area: planta;
-        display: flex;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(4, 1fr);
+        align-content: center;
+        justify-content: center;
         gap: 1em;
     }
-    .tab{
-        display: block;
-        margin: 0 auto;
-        width: 280px;
-        border-style: solid;
-    }
     .tablenav{
-        display: none;
-    }
-    .tablenavdesck{
-        grid-area: bar;
-        margin: 2em;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-size: larger;
+        grid-column-start: 1;
+        grid-column-end: 3; 
+        justify-self: center;
+        align-self: center;
     }
     footer{
         grid-area: footer;
@@ -128,73 +117,44 @@ text-align: center;
         grid-template-areas:
         "navbar filtro filtro"
         "navbar planta planta"
-        "footer bar bar";
-        grid-template-columns: 15em 1fr 1fr;
-        grid-template-rows: 5em 1fr 6em;
+        "footer planta planta";
+        /* grid-template-columns: 15em 1fr 1fr;
+        grid-template-rows: 5em 1fr 6em; */
     }
-    .fondonav{
-        grid-area: navbar;
-    }
-    .navbar{
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-        align-items: center;
-    }
-    .menu{
-        margin: 2em;
-        display: block;
-    }
-    .menu ul{
-        list-style: none;
-        display: block;
-    }
-    .menu li{
-        margin: 1em;
-    }
-    .burgernav{
+    .navphone{
         display: none;
     }
-    .fondofiltro{
+    .navdesktop{
+        grid-area: navbar;
+        display: block;
+    }
+    .flex-column a{
+        color: white;
+    }
+    .filtro{
         grid-area: filtro;
     }
     #fplantas{
-        width: 80%;
+        width: 70%;
         text-align: center;
-    }
-    #fplantas option{
-        text-align: center;
-    }
-    footer{
-        grid-area: footer;
     }
     .principal{
-        width: 80%;
-        margin-left: 10%;
         grid-area: planta;
-        display: flex;
-        flex-wrap: wrap;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: 1fr 1fr;
+        align-content: center;
         justify-content: center;
-        align-items: center;
         gap: 1em;
     }
     .tablenav{
-        display: none;
+        grid-column-start: 1;
+        grid-column-end: 5; 
+        justify-self: center;
+        align-self: center;
     }
-    .tablenavdesck{
-        grid-area: bar;
-        margin: 2em;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-size: larger;
-    }
-    .desck{
-        display: block;
-        grid-area: auto;
-        margin: 0 auto;
-        width: 280px;
-        border-style: solid;
+    footer{
+        grid-area: footer;
     }
 }
 /* DESCKTOP */
