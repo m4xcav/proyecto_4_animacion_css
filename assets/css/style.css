@@ -6,87 +6,49 @@
 body{
     font-family: 'Geologica', sans-serif;
     display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: repeat(2, 1fr);
+    grid-template-areas:
+    "navbar"
+    "filtro"
+    "principal"
+    "footer";
 }
-.fondonav{
-    background: rgb(216,216,216);
-    background: linear-gradient(260deg, rgba(216,216,216,1) 7%, rgba(0,210,90,1) 60%);
-}
-.navbar{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 10px;
-}
-.flexicon{
-    margin: 10px;
-    display: flex;
-}
-.flexicon p{
-    font-size: 1.5em;
-}
-.flexicon i{
-    padding: 10%;
-}
-.menu{
+.vertical{
     display: none;
 }
+.navbar{
+    grid-area: navbar;
+}
+.navbar-brand:hover {
+animation: ascend 3s;
+}
 .fondofiltro{
-    background-color: #d8d8d8;
+    grid-area: filtro;
+    text-align: center;
 }
 .filtro{
     margin: 1em;
-    text-align: center;
 }
 .principal{
-    margin-top: 1em;
-    text-align: center;
-}
-.planta{
-    margin: 0 auto;
-    width: 280px;
-    border-style: solid;
-}
-.plantimg{
-    width: 248px;
-    height: 248px;
-}
-.precio{
-    margin: 0.5em;
-}
-.desck{
-    display: none;
-}
-.tablenav{
-    margin: 10px;
-    display: flex;
+    margin: 1em;;
+    display: grid;
+    align-content: center;
     justify-content: center;
-    align-items: center;
+    grid-area: principal;
+    gap: 1em;
 }
-.contenedorbar{
-    display: flex;
-    justify-content: space-around;
+.card-body{
+text-align: center;
 }
-.bar{
-    width: 2em;
-}
-.tablenavdesck{
-    display: none;
-}
-footer{
-    background-color: black;
+.footer{
+    grid-area: footer;
 }
 .socialicon{
     margin: 1em;
     text-align: center;
 }
 .footflex{
-   margin: 1em;
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   color: white;
+    text-align: center;
+    color: white;
 }
 /* MOBILE FIRTS */
 /* TABLETA */
@@ -236,3 +198,16 @@ footer{
     }
 }
 /* DESCKTOP */
+/* KEYFRAMES */
+@keyframes ascend{
+    0%{
+        opacity: 0;
+        transform: translateY(10px);
+        visibility: visible;
+    }
+    100%{
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+/* KEYFRAMES */
