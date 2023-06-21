@@ -1,0 +1,238 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+/* MOBILE FIRTS */
+body{
+    font-family: 'Geologica', sans-serif;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(2, 1fr);
+}
+.fondonav{
+    background: rgb(216,216,216);
+    background: linear-gradient(260deg, rgba(216,216,216,1) 7%, rgba(0,210,90,1) 60%);
+}
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px;
+}
+.flexicon{
+    margin: 10px;
+    display: flex;
+}
+.flexicon p{
+    font-size: 1.5em;
+}
+.flexicon i{
+    padding: 10%;
+}
+.menu{
+    display: none;
+}
+.fondofiltro{
+    background-color: #d8d8d8;
+}
+.filtro{
+    margin: 1em;
+    text-align: center;
+}
+.principal{
+    margin-top: 1em;
+    text-align: center;
+}
+.planta{
+    margin: 0 auto;
+    width: 280px;
+    border-style: solid;
+}
+.plantimg{
+    width: 248px;
+    height: 248px;
+}
+.precio{
+    margin: 0.5em;
+}
+.desck{
+    display: none;
+}
+.tablenav{
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.contenedorbar{
+    display: flex;
+    justify-content: space-around;
+}
+.bar{
+    width: 2em;
+}
+.tablenavdesck{
+    display: none;
+}
+footer{
+    background-color: black;
+}
+.socialicon{
+    margin: 1em;
+    text-align: center;
+}
+.footflex{
+   margin: 1em;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   color: white;
+}
+/* MOBILE FIRTS */
+/* TABLETA */
+@media (min-width:576px){
+    body{
+        font-family: 'Geologica', sans-serif;
+        display: grid;
+        grid-template-areas:
+        "navbar navbar navbar"
+        "filtro planta planta"
+        "filtro bar bar"
+        "footer footer footer";
+        grid-template-columns: 10em;
+        grid-template-rows: 6em;
+    }
+    .fondonav{
+        grid-area: navbar;
+    }
+    .navbar{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+
+    }
+    .burgernav{
+        display: none;
+    }
+    .menu{
+        margin: 2em;
+        display: block;
+    }
+    .menu ul{
+        list-style: none;
+        display: flex;
+    }
+    .menu li{
+        margin: 1em;
+    }
+    .fondofiltro{
+        grid-area: filtro;
+    }
+    .principal{
+        margin-top: 1em;
+        margin-left: 1em;
+        grid-area: planta;
+        display: flex;
+        gap: 1em;
+    }
+    .tab{
+        display: block;
+        margin: 0 auto;
+        width: 280px;
+        border-style: solid;
+    }
+    .tablenav{
+        display: none;
+    }
+    .tablenavdesck{
+        grid-area: bar;
+        margin: 2em;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: larger;
+    }
+    footer{
+        grid-area: footer;
+    }
+}
+/* TABLETA */
+/* DESCKTOP */
+@media (min-width:992px){
+    body{
+        font-family: 'Geologica', sans-serif;
+        display: grid;
+        grid-template-areas:
+        "navbar filtro filtro"
+        "navbar planta planta"
+        "footer bar bar";
+        grid-template-columns: 15em 1fr 1fr;
+        grid-template-rows: 5em 1fr 6em;
+    }
+    .fondonav{
+        grid-area: navbar;
+    }
+    .navbar{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+    }
+    .menu{
+        margin: 2em;
+        display: block;
+    }
+    .menu ul{
+        list-style: none;
+        display: block;
+    }
+    .menu li{
+        margin: 1em;
+    }
+    .burgernav{
+        display: none;
+    }
+    .fondofiltro{
+        grid-area: filtro;
+    }
+    #fplantas{
+        width: 80%;
+        text-align: center;
+    }
+    #fplantas option{
+        text-align: center;
+    }
+    footer{
+        grid-area: footer;
+    }
+    .principal{
+        width: 80%;
+        margin-left: 10%;
+        grid-area: planta;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 1em;
+    }
+    .tablenav{
+        display: none;
+    }
+    .tablenavdesck{
+        grid-area: bar;
+        margin: 2em;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: larger;
+    }
+    .desck{
+        display: block;
+        grid-area: auto;
+        margin: 0 auto;
+        width: 280px;
+        border-style: solid;
+    }
+}
+/* DESCKTOP */
